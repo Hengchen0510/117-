@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="zh-CN" data-standalone="true">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MTH117 数学分析期末复习计划、证明复盘和错题追踪">
+<meta name="theme-color" content="#f5f5f0">
+<title>数学分析 · 期末复习台</title>
+<style>
+:root{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#212538;background:#f5f5f0;line-height:1.55;--paper:#fff;--bg:#f5f5f0;--text:#212538;--muted:#62677b;--border:#e4e5dd;--blue:#2749cc;--blue-deep:#213bb1;--blue-light:#edf0ff;--ink:#171e3a;--green:#216752;--green-bg:#e8f3ec;--amber:#795013;--amber-bg:#fcf0d6;--purple:#5942aa;--purple-bg:#f1ecff}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:var(--blue);text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #6378e7;outline-offset:3px}button:disabled{opacity:.5;cursor:default}[hidden]{display:none!important}svg{display:block}p,h1,h2,h3{margin:0}small{display:block}
+.shell{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100vh}.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;background:#fcfcf8;border-right:1px solid var(--border);padding:27px 15px 19px;z-index:5;overflow:auto}.brand{display:flex;gap:11px;align-items:center;color:var(--ink);padding:0 8px;margin-bottom:40px;white-space:nowrap}.brand strong{font-size:16px;letter-spacing:.03em}.brand small{font-size:9px;letter-spacing:.15em;color:#707488;font-weight:700;margin-top:1px}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--blue);color:white;font-family:Georgia,serif;font-size:25px;line-height:1}.nav-caption{padding:0 11px;margin:0 0 8px;color:#73778a;font-size:11px;font-weight:750;letter-spacing:.075em}.secondary-caption{margin-top:27px}.side nav{display:grid;gap:4px}.nav-link{color:#4e546b;display:flex;align-items:center;gap:11px;border-radius:8px;padding:9px 11px;font-size:13px;font-weight:650;min-height:40px}.nav-link:hover{background:#f0f0ec}.nav-link.active{background:#e9edff;color:#2643bf}.nav-link .nav-count{margin-left:auto;border-radius:99px;background:#f8e9ce;color:#714b0f;padding:0 7px;font-size:10px}.sidebar-bottom{margin-top:auto;padding:24px 5px 0}.course-badge{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding:15px 2px 0}.course-symbol{display:grid;place-items:center;width:33px;height:33px;border-radius:8px;background:#edece5;color:#505971;font-family:Georgia,serif;font-size:22px}.course-badge b{font-size:12px}.course-badge small{color:#666b7c;font-size:10px}.sync{display:flex;align-items:center;gap:6px;margin:12px 2px 0;color:#676c7f;font-size:10px}.sync i{width:6px;height:6px;border-radius:50%;background:#638e76}.sync.offline i{background:#c88936}
+.workspace{min-width:0}.topbar{height:67px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);background:#fafaf6}.crumb,.header-actions{display:flex;align-items:center;gap:13px;font-size:13px;min-width:0}.course-label{letter-spacing:.055em;color:#526085;font-weight:700}.crumb-divider{color:#8c90a0}.today-date{font-size:12px;color:#62687c;white-space:nowrap}.menu{display:none!important}.button{border:1px solid transparent;border-radius:8px;display:inline-flex;justify-content:center;align-items:center;gap:7px;min-height:36px;padding:7px 13px;font-size:13px;font-weight:700;line-height:1.4;white-space:nowrap}.button.primary{background:var(--blue);color:white}.button.primary:hover{background:var(--blue-deep)}.button.outline{background:white;border-color:#dedfe8;color:#34415d}.button.outline:hover{border-color:#a9b4eb;background:#f9faff}.button.subtle{background:var(--blue-light);color:var(--blue)}.button.danger{color:#9b3e3a;background:#fff1ee}.button.white{background:white;color:#233db1}.button.ghost{color:white;border-color:#ffffff65;background:#ffffff13}.text-button{background:transparent;border:0;padding:4px 0;color:var(--blue);font-weight:750;font-size:12px;white-space:nowrap}.text-button:hover{text-decoration:underline}.iconbtn{display:inline-grid;place-items:center;width:33px;height:33px;border:1px solid var(--border);border-radius:8px;background:white;color:#52586d;font-size:17px}.icon{width:17px;height:17px;flex:none}
+main{max-width:1450px;margin:0 auto;padding:25px 32px 30px;min-height:calc(100vh - 120px)}.footer{max-width:1450px;margin:auto;padding:0 32px 17px;display:flex;justify-content:space-between;color:#747789;font-size:10px}.hero{position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:215px;background:#2847c5;border-radius:15px;color:white;padding:28px 34px}.hero-art{position:absolute;inset:0 0 0 auto;width:63%;height:100%;z-index:-1;opacity:.84}.hero-main{max-width:640px}.hero-tag{display:inline-flex;gap:7px;align-items:center;font-size:11px;color:#e5eaff;background:#ffffff15;border:1px solid #ffffff38;border-radius:99px;padding:3px 9px;letter-spacing:.07em;font-weight:700}.hero h1{font-size:clamp(27px,3.5vw,47px);line-height:1.16;margin:11px 0 8px;letter-spacing:.025em;font-weight:800}.hero p{color:#e8ecff;font-size:13px;margin-bottom:17px}.hero-actions{display:flex;gap:8px;flex-wrap:wrap}.countdown{flex:none;min-width:128px;text-align:center;padding:13px 11px;border:1px solid #ffffff50;background:#14299b58;border-radius:12px}.countdown .metric-label{font-size:11px;color:#e6ebff;letter-spacing:.08em}.countdown strong{display:block;font-size:42px;line-height:1.25;font-family:Georgia,serif;font-weight:500}.countdown small{font-size:10px;color:#e1e7ff}
+.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:14px 0}.stat{min-width:0;display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;gap:10px;padding:12px 13px;border-radius:12px;border:1px solid var(--border);background:#fcfcfa;color:var(--text);text-align:left}.stat:hover{border-color:#b6bce0}.stat .mark,.mark{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--blue-light);color:var(--blue)}.mark.green{color:var(--green);background:var(--green-bg)}.mark.amber{color:var(--amber);background:var(--amber-bg)}.mark.purple{color:var(--purple);background:var(--purple-bg)}.stat strong{font-size:23px;line-height:1.17;display:block;font-variant-numeric:tabular-nums}.stat small{font-size:11px;color:var(--muted);overflow-wrap:anywhere;margin-top:3px}
+.dash-grid{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(290px,1fr);gap:14px;align-items:start}.stack{display:grid;gap:14px}.panel{min-width:0;border:1px solid var(--border);border-radius:13px;background:var(--paper);padding:17px 19px}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}.panel-head h2{font-size:17px;letter-spacing:.015em;line-height:1.3}.panel-head p{color:var(--muted);font-size:12px;margin-top:4px}.label{color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.1em}.task-line{display:grid;grid-template-columns:21px minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 0;border-top:1px solid #ecece7}.task-line:first-child{border-top:0}.task-line input{width:16px;height:16px;accent-color:var(--blue);margin:4px 0 0}.task-line label{display:block;font-size:13px;font-weight:750;cursor:pointer;overflow-wrap:anywhere}.task-line .task-desc{font-size:11px;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}.task-line.is-done label{text-decoration:line-through;color:#6c7080}.task-line .duration{font-size:11px;color:#686d7f;white-space:nowrap;margin-top:2px}.chip{display:inline-flex;align-items:center;max-width:100%;width:fit-content;border-radius:99px;padding:2px 8px;font-weight:650;font-size:10px;white-space:nowrap;background:#efefe9;color:#555b6b}.chip.blue{background:var(--blue-light);color:#2c46ad}.chip.green{background:var(--green-bg);color:var(--green)}.chip.amber{background:var(--amber-bg);color:var(--amber)}.chip.purple{background:var(--purple-bg);color:var(--purple)}.inline-tags{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.task-line .inline-tags{margin-top:5px}.phase-mini{display:grid;gap:9px}.phase-mini-row{display:flex;align-items:center;gap:9px;font-size:12px;color:#5c6278}.phase-mini-row .phase-dot{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#f1f1ec;color:#656a7b;font-weight:700;font-size:10px}.phase-mini-row.active{color:var(--blue);font-weight:750}.phase-mini-row.active .phase-dot{color:white;background:var(--blue)}.phase-mini-row .range{margin-left:auto;font-size:10px;white-space:nowrap}.focus-mini{display:grid;gap:9px}.focus-mini a{display:grid;grid-template-columns:27px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:12px;color:#31374d;font-weight:650}.focus-mini .mini-symbol{display:grid;place-items:center;width:27px;height:27px;border-radius:7px;background:#f0eefc;color:#5040a8;font-size:13px}.focus-mini a:hover{color:var(--blue)}
+.notice{padding:10px 12px;border-radius:8px;background:#f1f3ff;color:#3d4d88;font-size:12px}.notice.amber{background:#fff5e0;color:#724b13}.notice a,.notice button{font-weight:750}.overview-note{margin-top:14px}.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:17px}.page-head h1{font-size:32px;line-height:1.2;margin:4px 0 5px;letter-spacing:.02em}.page-head p{font-size:13px;color:var(--muted);max-width:690px}.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.filters{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:10px 0 15px}.filters input,.filters select{max-width:100%;width:auto;min-width:105px}.control,input:not([type=checkbox]),select,textarea{width:100%;min-width:0;border:1px solid #dbdde6;border-radius:7px;background:white;color:var(--text);padding:7px 9px;font-size:13px}.filters input{width:220px}.filters select{width:auto;max-width:100%}textarea{min-height:78px;resize:vertical}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.tab{padding:6px 12px;border-radius:7px;background:#f4f4ef;color:#555e73;border:1px solid #e9e9df;font-size:12px;font-weight:700}.tab[aria-pressed=true]{color:var(--blue);border-color:#d9e0ff;background:var(--blue-light)}.phase-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:14px}.phase-card{text-align:left;border:1px solid var(--border);border-radius:10px;padding:12px;background:white;color:var(--text);min-width:0}.phase-card:hover{border-color:#a9b4eb}.phase-card[aria-pressed=true]{background:var(--blue-light);border-color:#9eacef;color:var(--blue)}.phase-card b,.phase-card small{display:block}.phase-card b{font-size:13px;margin-top:5px}.phase-card small{font-size:10px;color:#656b81;margin-top:3px}.progress-bar{height:7px;border-radius:12px;background:#e9eaf2;overflow:hidden;margin-top:8px}.progress-bar i{display:block;height:100%;background:var(--blue);border-radius:inherit}
+.empty{padding:22px 9px;text-align:center;color:#646b80;font-size:13px}.empty b{display:block;color:#303853;margin-bottom:4px}.empty .button{margin-top:10px}.table-wrap{overflow:auto}.records{width:100%;border-collapse:collapse;font-size:12px;text-align:left}.records th{background:#f6f6f2;color:#545b71;font-size:11px;font-weight:750;white-space:nowrap}.records td,.records th{padding:10px;border-bottom:1px solid #ecece5;vertical-align:top}.records td{min-width:85px;overflow-wrap:anywhere}.records tr:last-child td{border-bottom:0}.records td:first-child{min-width:150px}.records td:last-child{white-space:nowrap}.records .meta{margin-top:4px;color:var(--muted);font-size:11px}.record-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.record-card{border:1px solid var(--border);border-radius:10px;padding:12px;min-width:0;overflow-wrap:anywhere}.record-card h3{font-size:15px;margin:6px 0}.record-card p{font-size:13px;color:#49516b;white-space:pre-wrap}.record-card .actions{margin-top:10px}.record-card details{margin-top:8px}.record-card summary,.subdetail summary{font-size:12px;color:var(--blue);font-weight:700;cursor:pointer}.record-card details p{margin-top:6px}.subdetail p{white-space:pre-wrap;color:#50566a;margin:5px 0;font-size:12px}.section-group{margin-top:14px}.section-group:first-child{margin-top:0}.group-title{font-size:14px;margin:6px 0 8px}.group-title small{display:inline;color:var(--muted);font-size:11px;margin-left:6px}.spaced{margin-top:14px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{min-width:0;display:grid;align-content:start;gap:5px;font-size:12px;font-weight:700;color:#3e455d}.field.wide{grid-column:1/-1}.field small,.form-hint{font-weight:400;font-size:11px;color:var(--muted)}.field input[type=checkbox],.check-grid input{width:16px;height:16px;accent-color:var(--blue)}.check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:13px}.check-grid label{display:flex;align-items:center;gap:6px}.form-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:15px}.form-error{color:#a43131;font-size:12px;margin-top:7px}.source-card p{font-size:12px;margin:4px 0 8px;color:var(--muted)}.source-card a{font-size:12px;font-weight:700;overflow-wrap:anywhere}.source-card{padding:10px 0;border-top:1px solid var(--border)}.source-card:first-of-type{border-top:0}.review-list{display:grid;gap:6px}.review-line{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;padding:7px 0;border-bottom:1px solid #ededeb}.review-line:last-child{border:0}.review-line b{overflow-wrap:anywhere}.review-line small{color:var(--muted);margin-top:2px}
+dialog{width:min(670px,calc(100% - 25px));border:1px solid var(--border);border-radius:14px;padding:20px 23px;color:var(--text);max-height:90dvh;overflow:auto;box-shadow:0 18px 80px #1f2a5860}dialog::backdrop{background:#19234488}.dialog-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}.dialog-head h2{font-size:21px}.dialog-head p{font-size:12px;color:var(--muted);margin-top:3px}.toast{position:fixed;bottom:22px;right:22px;z-index:15;background:#202b51;color:white;border-radius:8px;padding:10px 15px;font-size:13px;box-shadow:0 5px 18px #202b5135;max-width:calc(100% - 44px)}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1100px){.shell{grid-template-columns:190px minmax(0,1fr)}.topbar,main{padding-left:22px;padding-right:22px}.dash-grid{grid-template-columns:minmax(0,1.4fr) minmax(265px,1fr)}.hero{padding-left:25px}.stat{padding:10px}.stat-grid{gap:8px}}
+@media(max-width:850px){.shell{grid-template-columns:155px minmax(0,1fr)}.side{padding-left:8px;padding-right:8px}.brand{gap:7px;padding:0 4px}.brand strong{font-size:14px}.logo{width:31px;height:31px}.topbar,main{padding-left:15px;padding-right:15px}.dash-grid{grid-template-columns:1fr}.dash-grid>.stack:last-child{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{grid-template-columns:27px minmax(0,1fr);gap:6px}.stat .mark{width:27px;height:27px}.stat strong{font-size:20px}}
+@media(max-width:640px){.shell{display:block}.side{position:fixed;top:0;bottom:0;left:0;width:220px;transform:translateX(-100%);transition:transform .2s;box-shadow:0 0 24px #25305730}.side.open{transform:translateX(0)}.side:not(.open){visibility:hidden}.menu{display:inline-grid!important}.topbar{height:54px;padding:0 12px}.crumb,.header-actions{gap:7px}.course-label,.crumb-divider,.today-date{display:none}.top-add{min-height:33px;padding:5px 8px}.hero{min-height:190px;padding:17px 14px;gap:9px}.hero h1{font-size:26px}.hero p{font-size:11px;margin-bottom:10px}.hero .button{font-size:11px;padding:5px 8px;min-height:31px}.countdown{min-width:74px;padding:8px 5px}.countdown strong{font-size:28px}.countdown .metric-label,.countdown small{font-size:9px}.stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dash-grid>.stack:last-child,.split,.record-cards{grid-template-columns:1fr}.panel{padding:13px}.phase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-head{align-items:flex-start;flex-direction:column;gap:9px}.page-head h1{font-size:27px}.form-grid{grid-template-columns:1fr}.footer{padding:0 15px 12px}.task-line{gap:6px}.hero-art{width:100%;opacity:.6}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
+
+</head>
+<body>
+<div class="shell">
+<aside class="side" id="sidebar">
+<a class="brand" href="#home"><span class="logo">∑</span><span><strong>期末复习台</strong><small>ANALYSIS STUDIO</small></span></a>
+<div class="nav-caption">复习工作区</div>
+<nav id="nav" aria-label="复习工作区"></nav>
+<div class="nav-caption secondary-caption">资料与设置</div>
+<nav id="secondary-nav" aria-label="资料与设置"></nav>
+<div class="sidebar-bottom"><div class="course-badge"><span class="course-symbol">ƒ</span><div><b>MTH117</b><small>Analysis I · XJTLU</small></div></div><span class="sync" id="sync" aria-live="polite"><i></i> 正在连接</span></div>
+</aside>
+<div class="workspace">
+<header class="topbar">
+<div class="crumb"><button class="menu iconbtn" data-action="menu" aria-label="展开导航">☰</button><span class="course-label">MTH117</span><span class="crumb-divider">/</span><strong id="crumb-page">复习总览</strong></div>
+<div class="header-actions"><span class="today-date" id="top-date"></span><button class="button outline top-add" data-action="error-new"><span>＋</span> 记错题</button></div>
+</header>
+<main id="main" tabindex="-1"></main>
+<footer class="footer"><span>MTH117 · 期末复习台</span><span>上海时间 · 随进度更新</span></footer>
+</div>
+</div>
+<dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript>请启用 JavaScript 使用复习台。</noscript>
+<script>
+
+const lib=id=>'https://chatgpt.com/library?file_id='+id+'&account_id=personal';
+const sources={
+ main:{name:'MTH117 notes.pdf',id:'libfile_4e020612d638819190780630e5566879',label:'主线 · 2026 课程讲义',note:'优先使用当前版讲义的定义与记号。页码为 PDF 页码。'},
+ old:{name:'MTH117 Lecture Notes.pdf',id:'libfile_1fb67e20b3ec81919c9b57e85fc1102e',label:'补查 · 2025/26 课程讲义',note:'只补查当前讲义里卡住的一步，写下页码，再回主线。'},
+ mock:{name:'MTH117 In-Semester Exam Material(1)(1).pdf',id:'libfile_ce56da8fcfe481918337400076561efe',label:'练习 · 期中材料与两套模拟',note:'包含第 43–45 页模拟练习，可补早期章节。'}
+};
+for(const s of Object.values(sources)) s.url=lib(s.id);
+const chapters=[
+ ['logic','逻辑与集合','§1 · PDF 3–11','§1 · PDF 7–25'],
+ ['functions','函数与可数性','§2 · PDF 12–20','§1.10、§3.1 · PDF 23、41'],
+ ['real','实数完备性','§3 · PDF 21–33','§2 · PDF 27–39'],
+ ['topology','实数拓扑','§3.3.1 后至 §5 前','§4 · PDF 55–68'],
+ ['limits','函数极限与连续','§5 · PDF 54–65','§5 · PDF 69–98'],
+ ['global','连续函数的整体性质','§6 · 参见讲义','§6 · PDF 99–112'],
+ ['sequences','数列与极限','§7 · PDF 73–82','§7 · PDF 113–130'],
+ ['series','数项级数','§8 · PDF 83–92','§8 · PDF 131–150'],
+];
+const chapterName=id=>chapters.find(x=>x[0]===id)?.[1]??'学习方法';
+const types=['定义辨析','定理条件','计算与判别','证明题','反例'];
+const focus=[
+ ['notes','老师笔记看不懂','定位一行卡点，拆成「定义、假设、结论」，用一个例子验证。','先改写一条定义'],
+ ['proof','思路有了，证明写不全','闭卷写出假设、关键桥梁和结论，圈出缺少理由的那一行。','补上关键推导'],
+ ['cases','容易穷举所有情况','先把结论改写成一个定义，尝试统一估计、构造或反证。','比较两条证明路线'],
+ ['switch','复习时反复换教材','锁定一本主资料。补查前写下具体卡点，只查相关一页并返回。','减少无目的切换']
+];
+const errors=[...focus.map(f=>f[1]),'量词或对象范围','漏用定理条件','选错判别法','计算或符号','时间分配','其他'];
+const taskRows=[
+ ['read-notes','method','易错点','把一行老师笔记拆成三句','记录页码，用自己的话写定义、前提和结论，再给一个例子。',20,5,0,'notes'],
+ ['write-proof','method','证明方法','闭卷写一题完整证明','先写任取对象与目标，再补定理条件、关键推导和收尾。',30,5,0,'proof'],
+ ['short-proof','method','证明方法','把分类讨论改成统一论证','用结论的定义倒推一步，再试反证、统一上界或直接构造。',25,5,1,'cases'],
+ ['single-source','method','易错点','完成一次只用主讲义的学习','记录主资料页码与补查次数。补查一处后回到原题闭卷写出那一步。',25,4,0,'switch'],
+ ['logic-q','logic','知识点','改写量词否定','练习把 ∀ 与 ∃ 互换，否定最内层命题，保留对象范围。',15,5,0,'notes'],
+ ['logic-set','logic','证明方法','用逐元素法证明集合等式','两边各写一次包含，任取元素并展开交、并、补集的定义。',20,4,0,'proof'],
+ ['logic-ind','logic','典型题型','完整写出一次归纳证明','标出起始值，清楚写出归纳假设与从 n 到 n+1 的代数桥梁。',25,3,1,'proof'],
+ ['func-img','functions','知识点','区分陪域、像与原像','给定一个函数和两个集合，分别写 f(A) 与 f⁻¹(B)。',20,4,0,'notes'],
+ ['func-range','functions','典型题型','用存在性求值域','把 y=f(x) 改写成关于 x 的方程。用判别式时单独核对首项系数为零。',25,4,1,'cases'],
+ ['func-count','functions','证明方法','证明 ℤ 可数','给出枚举或双射，解释为什么没有遗漏。',20,2,1,'proof'],
+ ['real-sup','real','定理','用两条条件证明上确界','先证候选是上界，再写 ∀ε>0，∃a∈A 使 s−ε<a。',25,5,0,'proof'],
+ ['real-arch','real','典型题型','用阿基米德性质确定区间交','先保留一定在交集里的点，再排除其余点。',25,4,1,'cases'],
+ ['real-nest','real','易错点','核对闭区间套定理的条件','区分闭区间、嵌套与长度趋零的作用，构造一个开区间反例。',20,4,1,'notes'],
+ ['real-hard','real','证明方法','整理区间套与完备性的反向推导','把二分构造写成不变量，检查端点的上界与非上界性质。',35,1,2,'proof',true],
+ ['topo-def','topology','知识点','区分内点、聚点、孤立点和闭包','画数轴，并用邻域定义说明每类点是否必须属于集合。',25,5,0,'notes'],
+ ['topo-compact','topology','定理','用闭且有界判别 ℝ 中的紧性','对开区间、有孤立点的有界集和含聚点的集合分别给理由。',25,4,1,'proof'],
+ ['topo-gap','topology','证明方法','用一个缺口证明不连通','选缺失点 c，构造两侧相对开集并证它们都非空。',20,4,1,'cases'],
+ ['limits-eps','limits','证明方法','独立写出 ε–δ 证明','先在草稿反推 δ，正式证明从给定 ε 开始并验证去心条件。',30,5,0,'proof'],
+ ['limits-side','limits','典型题型','比较左右极限和函数值','把左极限、右极限、函数值分成三栏，再判断连续与间断类型。',20,4,1,'notes'],
+ ['limits-bound','limits','易错点','用局部统一界替代分类','遇到 x 的系数先用 |x−a|<1 给出局部界，再选 δ。',25,4,1,'cases'],
+ ['global-ivt','global','定理','用介值定理证明零点存在','明确连续区间与端点符号，再说明零点所在区间。',25,5,1,'proof'],
+ ['global-evt','global','定理','写出极值定理的使用条件','核对连续性与紧性，并构造开区间上不取最大值的例子。',20,4,1,'notes'],
+ ['seq-eps','sequences','证明方法','独立写出 ε–N 证明','给定 ε 后选整数 N，并验证每个 n≥N 都满足不等式。',25,5,0,'proof'],
+ ['seq-rec','sequences','典型题型','递推数列先证收敛再求极限','用归纳建立界或不变量，证单调，最后再解极限方程。',30,5,1,'cases'],
+ ['seq-sub','sequences','典型题型','用两个子列证明发散','构造两个严格递增指标的子列，算出不同极限。',25,4,1,'proof'],
+ ['seq-cauchy','sequences','定理','用柯西准则处理差的估计','写清两个指标都在尾部，利用完备性完成结论。',25,4,2,'proof'],
+ ['seq-lims','sequences','典型题型','由尾部上确界找 limsup','先写尾部上确界数列，再比较偶数与奇数子列。',25,2,2,'notes',true],
+ ['series-test','series','典型题型','先排除通项不趋零再选择判别法','对正项级数从比较或比值入手，指出比值等于 1 时无法判别。',25,5,1,'notes'],
+ ['series-alt','series','定理','区分绝对收敛与条件收敛','先判绝对值级数，再检查交错级数的单调性与趋零。',25,5,1,'proof'],
+ ['series-tel','series','典型题型','把望远镜级数写成有限部分和','写出 Sₙ，消去中间项，再对剩余项取极限。',20,3,1,'cases'],
+ ['mixed-practice','method','典型题型','限时做一组混合题','从题库各选一道计算或判别题和一道证明题。先限时闭卷，结束后把卡点记进错题表。',40,5,2,'proof'],
+ ['condition-recall','method','定理','闭卷回忆三条定理的条件','从范围内选三条常用定理。先写条件和结论，再用一个反例检查漏掉的条件。',20,5,3,'notes'],
+ ['final-bridge','method','证明方法','考前重写最易漏的两处推导','从证明复盘表挑两处。合上答案，写出关键推导，再核对量词、对象范围和引用依据。',25,5,3,'proof']
+];
+const tasks=taskRows.map(([id,chapter,kind,title,detail,mins,weight,stage,focus,extra=false])=>({id,chapter,kind,title,detail,mins,weight,stage,focus,extra}));
+const practiceRows=[
+ ['m11','logic','定义辨析','量词否定','否定「存在实数 M，使集合 S 中的每个 x 都满足 |x|≤M」。','对每个实数 M，存在 x∈S 使 |x|>M。','模拟 1 · 1(a) · PDF 43'],
+ ['m12','logic','证明题','数学归纳法','用归纳法证明从 j=1 到 n 的 1/[(4j−3)(4j+1)] 之和等于 n/(4n+1)。','核对 n=1。假设 n 时成立，加入第 n+1 项后通分化为 (n+1)/(4n+5)。','模拟 1 · 1(b) · PDF 43'],
+ ['m13','real','证明题','上确界','求 [−2,25/7) 的上确界并说明理由。','上界为 25/7。对任意 ε>0，可从区间里选一个大于 25/7−ε 的数。','模拟 1 · 1(c) · PDF 43'],
+ ['m14','functions','计算与判别','定义域和值域','求 f(x)=(x+2)/(x²+2x+2) 的定义域和值域，使用代数方法。','定义域为 ℝ。把 y=f(x) 写成关于 x 的方程。y=0 可取 x=−2。其余情况判别式为 −4y²+4y+1，得到 [(1−√2)/2,(1+√2)/2]。','模拟 1 · 2(c) · PDF 43'],
+ ['m15','topology','计算与判别','聚点与开闭性','设 A=(−1,2]∪{5}。求其聚点集合，并判断开闭性。','聚点集合是 [−1,2]。2 和 5 都没有完全落入 A 的邻域，故非开。−1 是缺失的聚点，故非闭。','模拟 1 · 3 · PDF 43'],
+ ['m16','topology','证明题','开集与上确界','设 A⊂ℝ 为开集且 α=sup A 存在。证明 α∉A 且 α 是 A 的聚点。','若 α∈A，开性给出比 α 大的 A 中元素。上确界的逼近性质再给出任意邻域里的不同于 α 的点。','模拟 1 · 4(c) · PDF 43'],
+ ['m17','topology','计算与判别','聚点、紧性、孤立点','给定 D={1/n:n∈ℕ, n≥1}∪{2}。求聚点与孤立点并判断紧性。','唯一聚点为 0，所有 D 中的点均孤立。D 有界但缺少 0，因此不闭也不紧。','模拟 1 · 5(b) · PDF 44'],
+ ['m21','real','证明题','上确界与最大值','求集合 {(3n+2)/(n+1):n≥1} 的上确界，并判断是否取到。','写成 3−1/(n+1)。3 是上界。对每个 ε>0，取足够大的 n，使 1/(n+1)<ε。没有任何项等于 3。','模拟 2 · 1(c) · PDF 45'],
+ ['m22','real','定理条件','区间套','求所有 (2−1/n,2+1/n) 的交集。检查闭区间套定理的条件。','2 属于每个区间。若 x≠2，选 n 使 1/n≤|x−2| 即可排除 x。区间是开区间，闭区间套定理不适用。','模拟 2 · 2(b) · PDF 45'],
+ ['m23','topology','计算与判别','闭包与连通性','将 B=(3,6)∩ℚ 视为 ℝ 的子集。求内部、聚点集和闭包，判断开闭性、紧性及连通性。','有理数与无理数均稠密。内部为空，聚点集与闭包均为 [3,6]。B 非开、非闭、非紧。用任意介于 3 与 6 的无理点切开，可证非连通。','模拟 2 · 3 · PDF 45'],
+ ['m24','topology','证明题','连通性的缺口构造','证明 (0,2)∪(2,5] 不连通。','用 (−∞,2) 和 (2,∞) 分离集合。它们不交，各自与原集合交集非空，且并集覆盖原集合。','模拟 2 · 4(b) · PDF 45'],
+ ['m25','topology','证明题','连通性与上下确界','A、B 是非空有界实数集。若 A∪B 连通，证明 sup A≥inf B。','反设 sup A<inf B，在两者之间选 c。A 全在左侧，B 全在右侧，由两侧开集分离 A∪B。','模拟 2 · 4(c) · PDF 45'],
+ ['s01','functions','反例','像与交集','构造 f 与集合 A、B，使 f(A∩B) 严格包含于 f(A)∩f(B)。','取 f(x)=x²，A={−1}，B={1}。左侧为空，右侧为 {1}。'],
+ ['s02','limits','证明题','ε–δ 与局部估计','用定义证明 limₓ→₂ x²=4，给出能避免按 x 分类讨论的 δ。','令 δ=min(1, ε/5)。若 0<|x−2|<δ，则 |x+2|<5，故 |x²−4|<5δ≤ε。'],
+ ['s03','limits','计算与判别','左右极限','当 x<0 时 f(x)=x+1，x=0 时 f(x)=2，x>0 时 f(x)=1−x。判断 f 在 0 处是否连续及其间断类型。','左右极限都为 1，但 f(0)=2，是可去间断。'],
+ ['s04','global','证明题','介值定理','证明 x³+x−1=0 在 (0,1) 内至少有一个解。','多项式在 [0,1] 连续，端点值为 −1 和 1，介值定理给出一个零点。'],
+ ['s05','global','反例','极值定理','给出一个在开区间上连续且有界，但取不到最大值的函数。','f(x)=x 在 (0,1) 连续且有界，上确界为 1，取不到。'],
+ ['s06','sequences','证明题','ε–N 定义','用定义证明 aₙ=(2n+1)/(n+1) 收敛到 2。','|aₙ−2|=1/(n+1)。给定 ε>0，取整数 N>1/ε，则每个 n≥N 都满足目标不等式。'],
+ ['s07','sequences','证明题','递推数列与单调有界','设 a₁=0，aₙ₊₁=√(2+aₙ)。证明收敛并求极限。','归纳得 0≤aₙ≤2。a₂≥a₁，递推函数递增，由归纳得数列不减，故收敛。极限 L≥0 且 L²=L+2，所以 L=2。'],
+ ['s08','sequences','证明题','子列与发散','用子列证明 aₙ=(−1)ⁿ+1/n 不收敛。','偶数子列趋向 1，奇数子列趋向 −1。收敛数列的所有子列应同趋一个极限。'],
+ ['s09','sequences','定理条件','柯西数列','若 aₙ=1/n，写出一个 N 使 m,n≥N 时 |aₘ−aₙ|<ε。','用 |aₘ−aₙ|≤1/m+1/n，取 N>2/ε。'],
+ ['s10','series','计算与判别','极限比较判别法','判断 Σ(n+1)/(n³+1) 是否收敛，并说明比较对象。','和 1/n² 的比值趋于 1，且 Σ1/n² 收敛，由极限比较判别法可知收敛。'],
+ ['s11','series','计算与判别','绝对与条件收敛','判断 Σ(−1)ⁿ⁻¹/n 的收敛类型。','1/n 单调趋零，交错级数收敛。取绝对值得到发散的调和级数，因此条件收敛。'],
+ ['s12','series','计算与判别','望远镜级数','求 Σ 1/[n(n+1)]，n 从 1 开始。','1/[n(n+1)]=1/n−1/(n+1)，部分和为 1−1/(N+1)，所以总和为 1。']
+];
+const practice=practiceRows.map(([id,chapter,type,topic,prompt,hint,ref])=>({id,chapter,type,topic,prompt,hint,ref,source:ref?'mock':'original'}));
+const phases=[
+ {name:'梳理基础',range:'距考 ≥29 天',detail:'锁定主讲义，梳理定义与前提，用短题定位薄弱环节。'},
+ {name:'专题突破',range:'距考 15–28 天',detail:'专题练习与闭卷证明并行，把重复错误转成补救任务。'},
+ {name:'限时整合',range:'距考 6–14 天',detail:'按题型混合限时练习。若已录入真题，优先使用真题。'},
+ {name:'考前回收',range:'距考 0–5 天',detail:'重做未独立完成的题，核对高价值定理条件和证明开头。'}
+];
+
+
+
+const calendar=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'});
+const dayKey=(date=new Date())=>calendar.format(date);
+const dayNumber=value=>Date.parse(value+'T00:00:00Z')/86400000;
+const validDay=value=>/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(dayNumber(value))&&new Date(dayNumber(value)*86400000).toISOString().slice(0,10)===value;
+const dayDiff=(from,to)=>dayNumber(to)-dayNumber(from);
+const addDays=(from,count)=>new Date((dayNumber(from)+count)*86400000).toISOString().slice(0,10);
+
+const empty=()=>({settings:{},checks:{},errors:{},proofs:{},logs:{},questions:{},attempts:{},materials:{}});
+const values=group=>Object.values(group??{});
+const scopeOf=data=>new Set(data.settings.plan?.scope??chapters.map(row=>row[0]));
+const questionBank=data=>[...practice,...Object.entries(data.questions).map(([id,item])=>({...item,id}))];
+function stageFor(exam,today) {
+ if(!validDay(exam??''))return {stage:0,days:null};
+ const days=dayDiff(today,exam);
+ return {days,stage:days>28?0:days>14?1:days>5?2:3};
+}
+const unresolved=entry=>entry.status!=='solo';
+function priorities(data,today,stageOverride) {
+ const timing=stageFor(data.settings.plan?.exam,today);
+ const stage=stageOverride??timing.stage;
+ const scope=scopeOf(data);
+ const mistakes=Object.entries(data.errors).map(([id,x])=>({...x,id})).filter(x=>scope.has(x.chapter)||x.chapter==='method');
+ const due=mistakes.filter(x=>x.next<=today).sort((a,b)=>a.next.localeCompare(b.next));
+ const proofGaps=values(data.proofs).filter(x=>unresolved(x)&&scope.has(x.chapter));
+ const notes=values(data.materials).filter(x=>!x.resolved&&scope.has(x.chapter));
+ const logs=values(data.logs).filter(x=>x.date<=today&&dayDiff(x.date,today)<7);
+ const ranked=tasks.filter(t=>t.chapter==='method'||scope.has(t.chapter)).map(t=>{
+  const related=mistakes.filter(e=>e.chapter===t.chapter&&unresolved(e));
+  const dueInChapter=due.filter(e=>e.chapter===t.chapter);
+  const errorType=focus.find(f=>f[0]===t.focus)?.[1];
+  const recurring=mistakes.filter(e=>e.category===errorType&&unresolved(e)&&(t.chapter==='method'||e.chapter===t.chapter));
+  const relatedProofs=t.focus==='proof'||t.focus==='cases'?proofGaps.filter(e=>t.chapter==='method'||e.chapter===t.chapter):[];
+  const relatedNotes=t.focus==='notes'?notes.filter(e=>t.chapter==='method'||e.chapter===t.chapter):[];
+  const switching=t.focus==='switch'?logs.reduce((sum,entry)=>sum+Number(entry.switches||0),0):0;
+  const pressure=Math.min(6,related.length*2)+Math.min(9,dueInChapter.length*4)+Math.min(8,recurring.length*3)+Math.min(6,relatedProofs.length*2)+Math.min(6,relatedNotes.length*3)+Math.min(8,switching*2);
+  const reason=dueInChapter.length?'本章有 '+dueInChapter.length+' 道到期错题':recurring.length?'记录了 '+recurring.length+' 次同类错误':relatedProofs.length?'有 '+relatedProofs.length+' 道证明仍需补写':relatedNotes.length?'有 '+relatedNotes.length+' 条讲义卡点待补查':switching?'过去 7 天记录了 '+switching+' 次资料切换':related.length?'本章有 '+related.length+' 道尚未独立重做':t.stage>stage?'后续阶段再安排':t.extra?'拓展任务':'本阶段基础任务';
+  const completed=!!data.checks[t.id];
+  return {...t,pressure,reason,done:completed,score:t.weight*4+pressure+(t.stage===stage?4:0)-Math.max(0,t.stage-stage)*7-(t.extra?14:0)};
+ }).sort((a,b)=>b.score-a.score||a.mins-b.mins);
+ const pending=ranked.filter(t=>!t.done);
+ const eligible=pending.filter(t=>(!t.extra&&t.stage<=stage)||(t.pressure>=6&&(!t.extra||stage<3)));
+ const eligibleIds=new Set(eligible.map(t=>t.id));
+ const selected=eligible.slice(0,stage===3?4:6);
+ const selectedIds=new Set(selected.map(t=>t.id));
+ const later=pending.filter(t=>!selectedIds.has(t.id)).map(t=>({...t,reason:eligibleIds.has(t.id)?'本轮任务已排满，可在完成后递补':t.reason}));
+ const bank=questionBank(data).filter(q=>scope.has(q.chapter)&&!data.attempts[q.id]?.solo);
+ bank.sort((a,b)=>Number(b.source==='exam')-Number(a.source==='exam')||Number(due.some(e=>e.chapter===b.chapter))-Number(due.some(e=>e.chapter===a.chapter)));
+ return {ranked,selected,later,due,proofGaps,bank,stage,days:timing.days};
+}
+
+const short=(v,max,required=false)=>typeof v==='string'&&v.length<=max&&(!required||v.trim().length>0);
+const validChapter=v=>v==='method'||chapters.some(c=>c[0]===v);
+const status=v=>['pending','hinted','solo'].includes(v);
+const nonNegative=(value,max)=>typeof value!=='boolean'&&value!==null&&Number.isInteger(Number(value))&&Number(value)>=0&&Number(value)<=max;
+function validRecord(group,value){
+ if(group==='checks')return value===true;
+ if(!value||typeof value!=='object'||Array.isArray(value))return false;
+ if(group==='settings')return (!value.exam||validDay(value.exam))&&Array.isArray(value.scope)&&value.scope.every(x=>chapters.some(c=>c[0]===x));
+ if(group==='errors')return short(value.title,1500,true)&&validChapter(value.chapter)&&short(value.topic,300,true)&&short(value.mine,5000,true)&&errors.includes(value.category)&&short(value.correct,5000,true)&&status(value.status)&&validDay(value.next)&&short(value.questionId??'',80);
+ if(group==='proofs')return short(value.title,1500,true)&&validChapter(value.chapter)&&short(value.given,5000,true)&&short(value.goal,5000,true)&&short(value.bridge,5000,true)&&short(value.gap,5000)&&short(value.shorter,5000)&&status(value.status)&&validDay(value.date);
+ if(group==='logs')return validDay(value.date)&&nonNegative(value.minutes,1440)&&Number(value.minutes)>0&&short(value.goal,1000,true)&&short(value.source,300,true)&&nonNegative(value.switches,100)&&short(value.blocker,2000)&&short(value.next,2000);
+ if(group==='questions')return value.source==='exam'&&short(value.year,40,true)&&short(value.number,100,true)&&short(value.paper,250)&&chapters.some(c=>c[0]===value.chapter)&&types.includes(value.type)&&short(value.topic,300,true)&&short(value.prompt,6000,true)&&short(value.hint,6000);
+ if(group==='attempts')return typeof value.solo==='boolean'&&validDay(value.date);
+ if(group==='materials')return validChapter(value.chapter)&&short(value.source,300,true)&&short(value.location,200,true)&&short(value.line,2000,true)&&short(value.rewrite,4000)&&short(value.example,2000)&&typeof value.resolved==='boolean';
+ return false;
+}
+function validKey(group,id) {
+ return Object.hasOwn(empty(),group)&&typeof id==='string'&&/^[a-zA-Z0-9_-]{1,80}$/.test(id)&&
+  !['__proto__','constructor','prototype'].includes(id)&&(group!=='settings'||id==='plan')&&(group!=='checks'||tasks.some(t=>t.id===id));
+}
+
+
+function exportBackup(){
+ const blob=new Blob([JSON.stringify({version:1,data},null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement('a');
+ a.href=url;a.download='MTH117-学习记录-'+currentDay+'.json';a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+function importBackup(){
+ const picker=document.createElement('input');
+ picker.type='file';picker.accept='.json,application/json';
+ picker.addEventListener('change',async ()=>{
+  try{
+   const file=picker.files[0];
+   if(!file)return;
+   if(file.size>10000000)throw Error('large');
+   const payload=JSON.parse(await file.text());
+   if(payload.version!==1||!payload.data||typeof payload.data!=='object')throw Error('format');
+   const imported=empty();
+   for(const group of Object.keys(imported)){
+    for(const [id,value] of Object.entries(payload.data[group]??{})){
+     if(!validKey(group,id)||!validRecord(group,value))throw Error('record');
+     imported[group][id]=value;
+    }
+   }
+   for(const group of Object.keys(imported))data[group]={...imported[group],...data[group]};
+   cache();render();toast('备份已导入，保留了当前浏览器中同一条记录的版本');
+  }catch{toast('无法导入，请选择本复习台导出的有效 JSON 备份');}
+ });
+ picker.click();
+}
+
+
+const $=id=>document.getElementById(id);
+const localKey='analysis-studio-offline-v1';
+const nav=[['home','复习总览','grid'],['plan','阶段计划','route'],['practice','练习题库','book'],['errors','错题记录','alert'],['proofs','证明复盘','pen'],['logs','每日记录','calendar'],['materials','资料与笔记','folder'],['settings','考试设置','settings']];
+const paths={grid:'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',route:'M5 4v14m0-7h10l-3-3m3 3-3 3M5 4h12l-2 2m-10 12h13',book:'M4 4h12a3 3 0 0 1 3 3v13H6a2 2 0 0 1-2-2Zm0 13h15M8 8h7',alert:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 5v5m0 3h.01',pen:'M4 20l4-.8L20 7l-3-3L5 16Zm11-14 3 3',calendar:'M4 5h16v15H4zM4 9h16M8 3v4m8-4v4m-8 6h2m4 0h2m-8 3h2',folder:'M3 6h7l2 2h9v11H3Z',settings:'M12 4v16M4 8h16M4 16h16m-4-8v3m-8 5v3',check:'m5 12 5 5 9-10',clock:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4v5l3 2'};
+const icon=(name)=>'<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="'+paths[name]+'"/></svg>';
+const e=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const attr=e;
+const btn=(label,action,id='',style='outline')=>'<button class="button '+style+'" data-action="'+action+'" data-id="'+attr(id)+'">'+label+'</button>';
+const link=(label,href,style='outline')=>'<a class="button '+style+'" href="#'+href+'">'+label+'</a>';
+const chip=(s,color='')=>'<span class="chip '+color+'">'+e(s)+'</span>';
+const msg=(title,sub='',action='')=>'<div class="empty"><b>'+title+'</b>'+sub+action+'</div>';
+const panel=(title,sub,body,action='')=>'<section class="panel"><div class="panel-head"><div><h2>'+title+'</h2>'+(sub?'<p>'+sub+'</p>':'')+'</div>'+action+'</div>'+body+'</section>';
+const heading=(label,title,sub,actions='')=>'<div class="page-head"><div><div class="label">'+label+'</div><h1>'+title+'</h1><p>'+sub+'</p></div><div class="actions">'+actions+'</div></div>';
+const opt=(options,value)=>options.map(o=>{const [v,label]=Array.isArray(o)?o:[o,o];return '<option value="'+attr(v)+'"'+(v===value?' selected':'')+'>'+e(label)+'</option>';}).join('');
+const chOpts=chapters.map(c=>[c[0],c[1]]);
+const statusOpts=[['pending','待重做'],['hinted','借提示完成'],['solo','可独立完成']];
+const statusChip=value=>chip(statusOpts.find(x=>x[0]===value)?.[1]??'待重做',value==='solo'?'green':'amber');
+const select=(id,name,options,value)=>'<label><span class="sr">'+name+'</span><select id="'+id+'" aria-label="'+name+'">'+opt(options,value)+'</select></label>';
+const groupLabel={errors:'错题',proofs:'证明复盘',logs:'学习记录',questions:'真题',materials:'笔记卡'};
+
+let data=empty(), pending=[];
+try{
+ const cache=JSON.parse(localStorage.getItem(localKey)||'null');
+ if(cache){data={...empty(),...cache.data};pending=cache.pending??[];}
+}catch{}
+let currentDay=dayKey(), state='正在连接', sending=false, timer, toastTimer, phaseOverride, planMode='first';
+let practiceFilters={source:'all',chapter:'',type:'',year:'',group:'type',search:'',attempt:'all'};
+let errorFilter='all',errorChapter='', logMode='all';
+const cache=()=>{try{localStorage.setItem(localKey,JSON.stringify({data,pending}));return true;}catch{return false;}};
+const syncBadge=(message,offline=false)=>{state=message;$('sync').classList.toggle('offline',offline);$('sync').innerHTML='<i></i> '+e(state);};
+function apply(target,{group,id,value}){
+ if(value===null)delete target[group][id];
+ else target[group][id]=value;
+}
+function change(group,id,value){
+ const op={group,id,value};
+ apply(data,op);
+ const saved=cache();
+ render();
+ return saved;
+}
+async function sync(){
+ try{localStorage.setItem(localKey,JSON.stringify({data}));syncBadge('本机浏览器保存');}catch{syncBadge('本机存储不可用 · 可手动导出',true);}
+}
+const page=()=>nav.some(row=>row[0]===location.hash.slice(1))?location.hash.slice(1):'home';
+const plan=()=>priorities(data,currentDay);
+const latest=(arr,key='date')=>arr.sort((a,b)=>String(b[key]??'').localeCompare(String(a[key]??'')));
+const rows=(group)=>Object.entries(data[group]).map(([id,x])=>({...x,id}));
+const checkLine=(t,why=false)=>'<div class="task-line '+(t.done?'is-done':'')+'"><input type="checkbox" id="check-'+t.id+'" data-check="'+t.id+'"'+(t.done?' checked':'')+'><div><label for="check-'+t.id+'">'+e(t.title)+'</label><p class="task-desc">'+e(t.detail)+'</p><div class="inline-tags">'+chip(chapterName(t.chapter),'blue')+chip(t.kind)+(why?chip(t.reason,t.pressure?'amber':''):'')+'</div></div><span class="duration">'+t.mins+' 分钟</span></div>';
+const focusIcons=['book','pen','route','folder'];
+const dateLabel=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'long',day:'numeric',weekday:'short'});
+function graph(){
+ const paths=Array.from({length:15},(_,i)=>'<path d="M '+(238-i*17)+' 228 C '+(467-i*9)+' '+(230-i*2)+', '+(269+i*17)+' '+(47-i*3)+', '+(496+i*12)+' '+(-42+i*4)+'" stroke="'+(i%3===0?'#b3c6ff':'#8eaaff')+'" opacity="'+(i%3===0?.63:.37)+'"/>').join('');
+ return '<svg class="hero-art" aria-hidden="true" viewBox="0 0 610 230" preserveAspectRatio="xMaxYMid slice"><defs><pattern id="mesh" width="27" height="27" patternUnits="userSpaceOnUse"><path d="M 27 0 H 0 V 27" fill="none" stroke="#a6baff" stroke-width=".6" opacity=".35"/></pattern></defs><rect x="70" y="0" width="540" height="230" fill="url(#mesh)"/><g fill="none">'+paths+'</g><circle cx="434" cy="95" r="4" fill="#d8e2ff"/><circle cx="364" cy="151" r="3" fill="#bbceff"/><circle cx="535" cy="32" r="4" fill="#d8e2ff"/></svg>';
+}
+function overview(){
+ const p=plan(), done=p.ranked.filter(t=>t.done).length, todayLogs=values(data.logs).filter(x=>x.date===currentDay);
+ const minutes=todayLogs.reduce((s,x)=>s+Number(x.minutes),0);
+ const metrics=[['check','',done+' / '+p.ranked.length,'复习任务已完成','plan'],['alert','amber',p.due.length,'到期错题','errors'],['pen','purple',p.proofGaps.length,'待补写证明','proofs'],['clock','green',minutes,'今日学习分钟','logs']];
+ const days=p.days===null?'—':p.days<0?'已过':String(p.days);
+ const stageTitle=p.days===null?'起步清单':p.days<0?'考后复盘':phases[p.stage].name;
+ const stat=metrics.map(([ico,color,num,label,target])=>'<a class="stat" href="#'+target+'"><span class="mark '+color+'">'+icon(ico)+'</span><span><strong>'+num+'</strong><small>'+label+'</small></span></a>').join('');
+ const mini=phases.map((x,i)=>'<div class="phase-mini-row '+(i===p.stage?'active':'')+'"><span class="phase-dot">'+(i+1)+'</span><span>'+x.name+'</span><span class="range">'+x.range+'</span></div>').join('');
+ const focusMini=focus.map((x,i)=>'<a href="#'+['materials','proofs','proofs','logs'][i]+'"><span class="mini-symbol">'+icon(focusIcons[i])+'</span><span>'+x[1]+'</span><span aria-hidden="true">→</span></a>').join('');
+ const first=p.selected.slice(0,4).map(t=>checkLine(t)).join('')||msg('本轮任务已完成','可以进入阶段计划查看后续任务。');
+ const due=p.due.length?panel('到期重做','合上答案，先从题目独立写起。',reviewRows(p.due.slice(0,3)),link('查看错题','errors','subtle')):'';
+ return '<section class="hero">'+graph()+'<div class="hero-main"><span class="hero-tag">MTH117 / ANALYSIS I</span><h1>数学分析期末复习</h1><p>从讲义里的一条定义，到一份独立写完的证明。</p><div class="hero-actions">'+link('查看本阶段计划 →','plan','white')+btn('＋ 记学习记录','log-new','','ghost')+'</div></div><a href="#settings" class="countdown" aria-label="设置考试日期"><span class="metric-label">距离考试</span><strong>'+days+'</strong><small>'+(p.days===null?'设置考试日期 →':p.days<0?'查看考试设置 →':'天 · '+e(stageTitle))+'</small></a></section><section class="stat-grid" aria-label="复习数据">'+stat+'</section><div class="dash-grid"><div class="stack">'+panel('先学什么',stageTitle+' · 按任务完成与错题情况自动排序',first,link('查看全部','plan','subtle'))+due+'</div><div class="stack">'+panel('阶段路线','按距考试时间分为四个阶段。','<div class="phase-mini">'+mini+'</div>')+panel('四个重点困难','记录卡住的位置，给下一次复习一个起点。','<div class="focus-mini">'+focusMini+'</div>')+'</div></div>'+(values(data.questions).length?'':'<div class="notice overview-note">现有题库包含期中模拟选题和讲义专题自拟题。已预留历年期末真题录入与筛选。 <a href="#practice">查看题库 →</a></div>');
+}
+function reviewRows(entries){
+ return '<div class="review-list">'+entries.map(x=>'<div class="review-line"><div><b>'+e(x.title)+'</b><small>'+e(chapterName(x.chapter))+' · '+e(x.next)+'</small></div>'+btn('重做','redo',x.id,'subtle')+'</div>').join('')+'</div>';
+}
+function planView(){
+ const actual=plan(), p=priorities(data,currentDay,phaseOverride), done=p.ranked.filter(t=>t.done).length;
+ const bar=Math.round(done/Math.max(1,p.ranked.length)*100);
+ const stageCards=phases.map((s,i)=>'<button class="phase-card" data-action="phase" data-id="'+i+'" aria-pressed="'+(i===p.stage)+'"><span class="label">阶段 0'+(i+1)+(i===actual.stage?(actual.days===null?' · 起步':' · 当前'):'')+'</span><b>'+s.name+'</b><small>'+s.range+'</small></button>').join('');
+ const tabs=[['first','先学什么'],['later','暂时跳过'],['all','全部任务']].map(([id,l])=>'<button class="tab" data-action="plan-tab" data-id="'+id+'" aria-pressed="'+(planMode===id)+'">'+l+'</button>').join('');
+ const list=planMode==='first'?p.selected:planMode==='later'?p.later:p.ranked;
+ const taskList=list.map(t=>checkLine(t,true)).join('')||msg('这个清单目前为空');
+ const next=p.stage<3?priorities(data,currentDay,p.stage+1):null;
+ const nextPreview=next?.selected.slice(0,4).map(t=>'<div class="review-line"><b>'+e(t.title)+'</b>'+chip(t.reason,t.pressure?'amber':'')+'</div>').join('');
+ const suggested=p.stage>=2&&p.bank[0]?'<div class="notice spaced">'+(p.bank[0].source==='exam'?'真题限时练习':'混合限时练习')+' · '+e(p.bank[0].topic)+' '+btn('打开题目','question-open',p.bank[0].id,'subtle')+'</div>':'';
+ const aside=panel('任务进度','范围内已完成 '+done+' / '+p.ranked.length+' 项','<div class="progress-bar" role="progressbar" aria-label="任务进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+bar+'"><i style="width:'+bar+'%"></i></div>')+panel('到期错题优先','到达下次复习日期时会出现在这里。',p.due.length?reviewRows(p.due):msg('暂无到期错题'))+(next?panel('下一阶段预览','已完成项会移出，弱项会根据当前记录前移。',nextPreview||msg('暂无待安排任务')):'');
+ return heading('REVIEW ROADMAP','阶段复习计划','按剩余天数切换阶段。完成任务或更新复盘状态后，优先级和下一阶段预览会即时重排。',link('考试设置','settings'))+(!data.settings.plan?.exam?'<div class="notice spaced">考试日期待设置。当前先显示起步清单，你可以查看任何阶段。</div>':'')+'<div class="phase-grid spaced">'+stageCards+'</div><div class="dash-grid"><div class="stack">'+panel(phases[p.stage].name,phases[p.stage].detail,'<div class="tabs">'+tabs+'</div>'+taskList+suggested)+'</div><div class="stack">'+aside+'</div></div>';
+}
+function paperRef(q){
+ return q.source==='exam'?e(q.year+' · '+(q.paper?q.paper+' · ':'')+q.number):q.source==='mock'?e(q.ref):'根据课程讲义自拟';
+}
+const sourceNames={exam:'历年期末真题',mock:'期中模拟选题',original:'讲义专题自拟'};
+function questionCard(q){
+ const done=data.attempts[q.id]?.solo;
+ return '<article class="record-card"><div class="inline-tags">'+chip(chapterName(q.chapter),'blue')+chip(q.type)+chip(sourceNames[q.source],q.source==='exam'?'green':'purple')+(done?chip('已独立做出','green'):'')+'</div><h3>'+e(q.topic)+'</h3><p>'+e(q.prompt)+'</p><small class="form-hint">'+paperRef(q)+'</small><div class="actions">'+btn('开始练习','question-open',q.id,'subtle')+btn('记错题','error-from',q.id)+'</div></article>';
+}
+function practiceView(){
+ const f=practiceFilters, bank=questionBank(data), years=[...new Set(bank.filter(x=>x.source==='exam').map(x=>x.year))].sort().reverse();
+ const filters='<div class="filters">'+select('p-source','题目来源',[['all','全部来源'],...Object.entries(sourceNames)],f.source)+select('p-chapter','所属章节',[['','全部章节'],...chOpts],f.chapter)+select('p-type','题型',[['','全部题型'],...types],f.type)+select('p-year','考试年份',[['','全部年份'],...years],f.year)+select('p-attempt','练习进度',[['all','全部进度'],['pending','尚未独立完成'],['solo','已独立完成']],f.attempt)+'<input id="p-search" type="search" aria-label="搜索题库" placeholder="搜索知识点、题干、题号" value="'+attr(f.search)+'"></div>';
+ const groups=[['type','按题型'],['topic','按知识点'],['year','按试卷']].map(([id,l])=>'<button class="tab" data-action="practice-group" data-id="'+id+'" aria-pressed="'+(f.group===id)+'">'+l+'</button>').join('');
+ return heading('PRACTICE BANK','练习题库','分题型与知识点练习。每道题保留来源，也可以直接转成一条错题或证明复盘。',btn('批量导入','bulk-new')+btn('＋ 录入真题','question-new','','primary'))+
+ (!years.length?'<div class="notice amber">期末真题待录入。现有题目来自两套期中模拟的选题和按讲义编写的专题练习。</div>':'')+
+ '<section class="panel spaced"><div class="tabs">'+groups+'</div>'+filters+'<div id="practice-results"></div></section>';
+}
+function updatePractice(){
+ const node=$('practice-results');
+ if(!node)return;
+ const f=practiceFilters;
+ const qs=questionBank(data).filter(q=>(f.source==='all'||q.source===f.source)&&(!f.chapter||q.chapter===f.chapter)&&(!f.type||q.type===f.type)&&(!f.year||q.year===f.year)&&(f.attempt==='all'||(f.attempt==='solo')===!!data.attempts[q.id]?.solo)&&(!f.search||[q.topic,q.prompt,q.year,q.paper,q.number,q.ref,chapterName(q.chapter)].some(x=>String(x??'').toLowerCase().includes(f.search.trim().toLowerCase()))));
+ const groups=new Map();
+ for(const q of qs){
+  const label=f.group==='type'?q.type:f.group==='topic'?q.topic:q.source==='exam'?q.year+' · '+(q.paper||'期末试卷'):q.source==='mock'?q.ref.split(' · ')[0]:'讲义专题自拟';
+  if(!groups.has(label))groups.set(label,[]);
+  groups.get(label).push(q);
+ }
+ node.innerHTML=qs.length?'<p class="form-hint">共 '+qs.length+' 道题</p>'+Array.from(groups,([k,v])=>'<section class="section-group"><h3 class="group-title">'+e(k)+'<small>'+v.length+' 道</small></h3><div class="record-cards">'+v.map(questionCard).join('')+'</div></section>').join(''):msg('没有符合条件的题目','可以调整筛选条件，或录入历年期末卷题目。');
+}
+function table(headers,body,blank){
+ return body?'<div class="table-wrap"><table class="records"><thead><tr>'+headers.map(h=>'<th scope="col">'+h+'</th>').join('')+'</tr></thead><tbody>'+body+'</tbody></table></div>':blank;
+}
+function errorsView(){
+ const list=rows('errors').filter(x=>(!errorChapter||x.chapter===errorChapter)&&(errorFilter==='all'||(errorFilter==='due'?x.next<=currentDay:x.status===errorFilter))).sort((a,b)=>a.next.localeCompare(b.next));
+ const filters='<div class="filters">'+select('e-status','重做状态',[['all','全部状态'],['due','已到复习日期'],...statusOpts],errorFilter)+select('e-chapter','错题章节',[['','全部章节'],...chOpts,['method','学习方法']],errorChapter)+'</div>';
+ const body=list.map(x=>'<tr><td><b>'+e(x.title)+'</b><div class="meta">'+e(x.topic)+'</div></td><td>'+e(chapterName(x.chapter))+'</td><td>'+e(x.category)+'</td><td>'+statusChip(x.status)+'</td><td>'+e(x.next)+'</td><td><div class="actions">'+btn('详情','error-open',x.id)+btn('重做','redo',x.id,'subtle')+'</div></td></tr>').join('');
+ return heading('ERROR JOURNAL','错题记录','保留自己的原解法，记录错在何处。重做时先隐藏参考思路。',btn('＋ 记错题','error-new','','primary'))+'<section class="panel">'+filters+table(['题目 / 知识点','章节','错误类型','独立重做','下次复习','操作'],body,msg('这里还没有符合条件的错题','从题库转入一道题，或手动记录你刚卡住的一题。',btn('记一条错题','error-new')) )+'</section>';
+}
+function proofsView(){
+ const list=latest(rows('proofs'));
+ const body=list.map(x=>'<tr><td><b>'+e(x.title)+'</b><div class="meta">'+e(chapterName(x.chapter))+' · '+e(x.date)+'</div></td><td>'+e(x.bridge)+'</td><td>'+e(x.gap||'—')+'</td><td>'+e(x.shorter||'—')+'</td><td>'+statusChip(x.status)+'</td><td>'+btn('详情','proof-open',x.id)+'</td></tr>').join('');
+ return heading('PROOF WORKBENCH','证明题复盘','分别写已知、目标和关键推导，再指出哪一行写不完整，以及能否用一个论证替代分类讨论。',btn('＋ 复盘证明','proof-new','','primary'))+
+ '<div class="split">'+panel('写完整','给定条件 → 目标 → 关键推导 → 结论。','<div class="notice">'+focus[1][2]+'</div>')+panel('找更短的路线','先看结论的定义，再选择证明方法。','<div class="notice">'+focus[2][2]+'</div>')+'</div><div class="spaced">'+panel('复盘表','',table(['题目','关键推导','漏写的一步','更简洁的路线','独立重做','操作'],body,msg('还没有证明复盘','写下一道刚做过的证明题，标记你漏写的那一步。',btn('开始复盘','proof-new'))))+'</div>';
+}
+function logsView(){
+ const list=latest(rows('logs')).filter(x=>logMode!=='today'||x.date===currentDay);
+ const body=list.map(x=>'<tr><td><b>'+e(x.date)+'</b><div class="meta">'+e(x.goal)+'</div></td><td>'+e(x.minutes)+' 分钟</td><td>'+e(x.source)+'</td><td>'+e(x.switches)+' 次</td><td>'+e(x.blocker||'—')+'</td><td>'+e(x.next||'—')+'</td><td>'+btn('编辑','log-edit',x.id)+'</td></tr>').join('');
+ const total=list.reduce((s,x)=>s+Number(x.minutes),0);
+ return heading('DAILY STUDY LOG','每日学习记录','每次只选一本主资料。记录实际学习时间、切换次数和下次要做的第一件事。',btn('＋ 记学习记录','log-new','','primary'))+
+ panel('学习记录表','当前视图累计 '+total+' 分钟','<div class="filters">'+select('log-mode','查看日期',[['all','全部日期'],['today','今天']],logMode)+'</div>'+table(['日期 / 今日目标','用时','主资料','切换次数','遇到的卡点','下次先做','操作'],body,msg('还没有学习记录','记下今天使用的主资料和做完的一项任务。',btn('添加学习记录','log-new'))));
+}
+function materialsView(){
+ const entries=rows('materials');
+ const body=entries.map(x=>'<tr><td><b>'+e(x.line)+'</b><div class="meta">'+e(chapterName(x.chapter))+' · '+e(x.source)+' · '+e(x.location)+'</div></td><td>'+e(x.rewrite||'—')+'</td><td>'+e(x.example||'—')+'</td><td>'+chip(x.resolved?'已弄懂':'待补查',x.resolved?'green':'amber')+'</td><td>'+btn('编辑','material-edit',x.id)+'</td></tr>').join('');
+ const src=Object.values(sources).map(s=>'<div class="source-card"><b>'+s.label+'</b><p>'+s.note+'</p><a href="'+s.url+'" target="_blank" rel="noopener">'+s.name+' ↗</a></div>').join('');
+ const chapterTable=table(['章节','当前讲义','补查讲义'],chapters.map(c=>'<tr><td>'+e(c[1])+'</td><td>'+e(c[2])+'</td><td>'+e(c[3])+'</td></tr>').join(''),'');
+ return heading('COURSE MATERIALS','资料与笔记','先回到老师讲义定位一行卡住的内容，再决定是否需要补查。',btn('＋ 记笔记卡点','material-new','','primary'))+'<div class="split">'+panel('主线与补查','一次复习只从主资料开工。',src)+panel('章节索引','两份讲义的组织方式不同，以当前课程要求为准。',chapterTable)+'</div><div class="spaced">'+panel('老师笔记卡','记录原句与页码，再用自己的话重述并给出例子。',table(['卡住的一行','定义 / 前提 / 结论','验证例子','状态','操作'],body,msg('还没有笔记卡','先录入一个你读不懂的符号、定义或推导。',btn('记一条卡点','material-new'))))+'</div>';
+}
+function settingsView(){
+ const active=scopeOf(data);
+ const checkboxes=chapters.map(c=>'<label><input type="checkbox" name="scope" value="'+c[0]+'"'+(active.has(c[0])?' checked':'')+'> '+e(c[1])+'</label>').join('');
+ const backup=panel('本地备份','记录保存在当前浏览器。更换设备或清理浏览器数据前，可导出一份备份。','<div class="actions">'+btn('导出学习记录','backup-export')+btn('导入学习记录','backup-import')+'</div>');
+ return heading('EXAM SETTINGS','考试设置','填入正式考试日期，并按老师公布的范围选择章节。')+'<div class="stack">'+panel('日期与范围','以北京时间计算剩余天数。学习方法任务始终保留。','<form id="settings-form"><div class="form-grid">'+field('期末考试日期','exam',data.settings.plan?.exam??'',{required:false,max:10,placeholder:'YYYY-MM-DD',help:'可直接输入，例如 2026-12-18。留空可清除考试日期。'})+'<div class="field wide"><span>考试范围</span><div class="check-grid">'+checkboxes+'</div><small>未勾选章节会从计划中移除，既有记录仍可查看。</small></div></div><p class="form-error" hidden role="alert"></p><div class="form-actions"><button class="button primary" type="button" data-action="settings-save">保存考试设置</button></div></form>')+backup+'</div>';
+}
+const views={home:overview,plan:planView,practice:practiceView,errors:errorsView,proofs:proofsView,logs:logsView,materials:materialsView,settings:settingsView};
+function render(passive=false){
+ const active=page();
+ if(passive&&($('dialog').open||document.activeElement?.matches('input,textarea,select')))return;
+ const p=plan();
+ const mk=([id,label,ico])=>'<a class="nav-link '+(active===id?'active':'')+'" href="#'+id+'"'+(active===id?' aria-current="page"':'')+'>'+icon(ico)+e(label)+(id==='errors'&&p.due.length?'<span class="nav-count">'+p.due.length+'</span>':'')+'</a>';
+ $('nav').innerHTML=nav.slice(0,6).map(mk).join('');
+ $('secondary-nav').innerHTML=nav.slice(6).map(mk).join('');
+ $('top-date').textContent=dateLabel.format(new Date());
+ $('crumb-page').textContent=nav.find(x=>x[0]===active)[1];
+ $('main').innerHTML=views[active]();
+ if(active==='practice')updatePractice();
+}
+
+function field(label,name,value='',opts={}){
+ const {type='text',options,wide=false,required=true,help='',max=5000,min,placeholder=''}=opts;
+ const common=' name="'+name+'"'+(required?' required':'')+' placeholder="'+attr(placeholder)+'"';
+ const control=options?'<select'+common+'>'+opt(options,value)+'</select>':type==='textarea'?'<textarea'+common+' maxlength="'+max+'">'+e(value)+'</textarea>':type==='checkbox'?'<input type="checkbox" name="'+name+'"'+(value?' checked':'')+'>':'<input type="'+type+'"'+common+' value="'+attr(value)+'"'+(type==='number'?' min="'+(min??0)+'" max="'+max+'" step="1"':' maxlength="'+max+'"')+'>';
+ return '<label class="field '+(wide?'wide':'')+'"><span>'+label+'</span>'+control+(help?'<small>'+help+'</small>':'')+'</label>';
+}
+function show(title,sub,body){
+ const d=$('dialog');
+ d.innerHTML='<div class="dialog-head"><div><h2 id="dialog-title">'+title+'</h2>'+(sub?'<p>'+sub+'</p>':'')+'</div><button type="button" class="iconbtn" data-action="close" aria-label="关闭">×</button></div>'+body;
+ if(!d.open)d.showModal();
+ else d.scrollTop=0;
+}
+const close=()=>{$('dialog').close();};
+function form(title,sub,group,id,body){
+ show(title,sub,'<form id="record-form" data-group="'+group+'" data-id="'+attr(id)+'"><div class="form-grid">'+body+'</div><p class="form-error" hidden role="alert"></p><div class="form-actions">'+(id?'<button type="button" class="button danger" data-action="delete-ask" data-group="'+group+'" data-id="'+attr(id)+'">删除</button>':'')+'<button type="button" class="button outline" data-action="close">取消</button><button type="submit" class="button primary">保存</button></div></form>');
+}
+function errorForm(id='',q){
+ const x=data.errors[id]??{};
+ form(id?'编辑错题':'记录错题','先把当时怎么想的写下来，再补正确思路。','errors',id,
+ field('题目','title',x.title??q?.prompt??'',{type:'textarea',wide:true,max:1500})+
+ field('所属章节','chapter',x.chapter??q?.chapter??'logic',{options:[...chOpts,['method','学习方法']]})+
+ field('考查知识点','topic',x.topic??q?.topic??'',{max:300})+
+ field('我的解法','mine',x.mine??'',{type:'textarea',wide:true,placeholder:'写实际做过的第一步。如果没有起手，记录卡住的原因。'})+
+ field('错误类型','category',x.category??errors[0],{options:errors})+
+ field('是否能独立重做','status',x.status??'pending',{options:statusOpts})+
+ field('正确思路','correct',x.correct??'',{type:'textarea',wide:true,placeholder:'记录下一次起手该做什么，以及关键一步。'})+
+ field('下次复习日期','next',x.next??addDays(currentDay,1),{type:'date'})+
+ '<input type="hidden" name="questionId" value="'+attr(x.questionId??q?.id??'')+'">');
+}
+function proofForm(id='',q){
+ const x=data.proofs[id]??{};
+ form(id?'编辑证明复盘':'复盘一道证明题','可以只写简洁的证明骨架，但每个关键推导都要能说出依据。','proofs',id,
+ field('题目','title',x.title??q?.prompt??'',{type:'textarea',wide:true,max:1500})+
+ field('所属章节','chapter',x.chapter??q?.chapter??'logic',{options:chOpts})+
+ field('复盘日期','date',x.date??currentDay,{type:'date'})+
+ field('已知条件','given',x.given??'',{type:'textarea'})+
+ field('待证结论','goal',x.goal??'',{type:'textarea'})+
+ field('关键推导及依据','bridge',x.bridge??'',{type:'textarea',wide:true,placeholder:'哪条定义或定理把条件连到了结论？'})+
+ field('我漏写的一步','gap',x.gap??'',{type:'textarea',required:false,placeholder:'量词、变量范围、定理前提，或推导理由。'})+
+ field('更简洁的证明路线','shorter',x.shorter??'',{type:'textarea',required:false,placeholder:'试一个统一估计、构造或反证，比较它与原解。'})+
+ field('闭卷独立重做','status',x.status??'pending',{options:statusOpts}));
+}
+function logForm(id=''){
+ const x=data.logs[id]??{};
+ form(id?'编辑学习记录':'记录一次学习','一天下来可以记多次。主资料与切换次数会帮助下一轮排序。','logs',id,
+ field('学习日期','date',x.date??currentDay,{type:'date'})+
+ field('学习分钟数','minutes',x.minutes??25,{type:'number',min:1,max:1440})+
+ field('完成内容或学习目标','goal',x.goal??'',{wide:true,max:1000})+
+ field('主资料','source',x.source??sources.main.name,{max:300})+
+ field('切换资料次数','switches',x.switches??0,{type:'number',max:100})+
+ field('卡在哪里','blocker',x.blocker??'',{type:'textarea',required:false,max:2000})+
+ field('下次先做什么','next',x.next??'',{type:'textarea',required:false,max:2000}));
+}
+function materialForm(id=''){
+ const x=data.materials[id]??{};
+ form(id?'编辑笔记卡':'记录讲义卡点','记下最小的一处卡点，补查完成后回到主讲义。','materials',id,
+ field('所属章节','chapter',x.chapter??'logic',{options:chOpts})+
+ field('主讲义或课件名','source',x.source??sources.main.name,{max:300})+
+ field('页码、节号或行号','location',x.location??'',{max:200})+
+ field('卡住的一行','line',x.line??'',{type:'textarea',wide:true,max:2000})+
+ field('用自己的话重述','rewrite',x.rewrite??'',{type:'textarea',wide:true,max:4000,required:false,help:'写定义、前提和结论。'})+
+ field('检验用的例子或反例','example',x.example??'',{type:'textarea',wide:true,max:2000,required:false})+
+ field('已弄懂这一步','resolved',x.resolved??false,{type:'checkbox',required:false}));
+}
+function questionForm(id=''){
+ const x=data.questions[id]??{};
+ form(id?'编辑期末真题':'录入一道期末真题','按实际试卷填写年份、题号与来源。每个小问可以单独录入。','questions',id,
+ field('年份 / 学年','year',x.year??'',{max:40,placeholder:'例如 2025–26'})+
+ field('卷名 / 场次','paper',x.paper??'',{max:250,required:false})+
+ field('题号','number',x.number??'',{max:100,placeholder:'例如 2(b)'})+
+ field('所属章节','chapter',x.chapter??'logic',{options:chOpts})+
+ field('题型','type',x.type??types[0],{options:types})+
+ field('知识点','topic',x.topic??'',{max:300})+
+ field('题干','prompt',x.prompt??'',{type:'textarea',wide:true,max:6000})+
+ field('参考思路或答案','hint',x.hint??'',{type:'textarea',wide:true,max:6000,required:false}));
+}
+function bulk(){
+ const example=[{year:'请填写实际年份',paper:'卷名',number:'1(a)',chapter:'logic',type:'证明题',topic:'知识点',prompt:'在这里替换成原题题干',hint:''}];
+ show('批量导入期末真题','每个对象对应一道题。此入口接收结构化 JSON。', '<form id="bulk-form"><p class="form-hint">章节代码 '+chOpts.map(([k,v])=>k+'＝'+v).join('、')+'。题型 '+types.join('、')+'。</p>'+field('题目 JSON 数组','bulk','',{type:'textarea',wide:true,max:180000,help:'可复制示例结构。请填写真实试卷信息。'})+'<details class="subdetail"><summary>查看格式示例</summary><p>'+e(JSON.stringify(example,null,2))+'</p></details><p class="form-error" hidden role="alert"></p><div class="form-actions"><button type="submit" class="button primary">导入题目</button></div></form>');
+}
+function questionDialog(q){
+ const done=data.attempts[q.id]?.solo;
+ show(e(q.topic),paperRef(q),' <div class="inline-tags">'+chip(chapterName(q.chapter),'blue')+chip(q.type)+chip(sourceNames[q.source],'purple')+(done?chip('已独立做出','green'):'')+'</div><article class="record-card spaced"><p>'+e(q.prompt)+'</p></article><details class="subdetail spaced"><summary>查看参考思路</summary><p>'+e(q.hint||'这道题尚未录入参考思路。')+'</p></details><div class="form-actions">'+(q.source==='exam'?btn('编辑真题','question-edit',q.id):'')+(q.type==='证明题'?btn('复盘证明','proof-from',q.id):'')+btn('记错题','error-from',q.id)+btn(done?'撤销独立完成':'标记独立完成','question-done',q.id,'primary')+'</div>');
+}
+function errorDialog(x,retry){
+ const title=retry?'闭卷重做':'错题详情';
+ const followUp=retry?'<form id="redo-form" data-id="'+attr(x.id)+'" class="spaced"><div class="form-grid">'+field('本次重做结果','status',x.status,{options:statusOpts})+field('下次复习日期','next',addDays(currentDay,1),{type:'date',help:'若选可独立完成且日期沿用默认，会自动推迟到 7 天后。'})+'</div><div class="form-actions"><button class="button primary" type="submit">保存重做结果</button></div></form>':'<div class="form-actions">'+btn('编辑','error-edit',x.id)+btn('开始重做','redo',x.id,'primary')+'</div>';
+ show(title,e(chapterName(x.chapter)+' · '+x.topic),'<article class="record-card"><div class="inline-tags">'+chip(x.category,'amber')+statusChip(x.status)+'</div><p class="spaced">'+e(x.title)+'</p><details class="subdetail"><summary>查看我的原解法</summary><p>'+e(x.mine)+'</p></details><details class="subdetail"><summary>查看正确思路</summary><p>'+e(x.correct)+'</p></details></article>'+followUp);
+}
+function proofDialog(x){
+ show(e(x.title),e(chapterName(x.chapter)+' · '+x.date),'<article class="record-card">'+statusChip(x.status)+[['已知条件',x.given],['待证结论',x.goal],['关键推导',x.bridge],['漏写的一步',x.gap],['更简洁的路线',x.shorter]].map(([k,v])=>'<h3>'+k+'</h3><p>'+e(v||'—')+'</p>').join('')+'</article><div class="form-actions">'+btn('编辑复盘','proof-edit',x.id,'primary')+'</div>');
+}
+function toast(message){
+ const t=$('toast');
+ t.textContent=message;
+ t.hidden=false;
+ clearTimeout(toastTimer);
+ toastTimer=setTimeout(()=>{t.hidden=true;},2800);
+}
+function formError(form,message){
+ const el=form.querySelector('.form-error');
+ el.textContent=message; el.hidden=false;
+}
+const question=id=>questionBank(data).find(q=>q.id===id);
+function saveSettings(form){
+ const input=new FormData(form);
+ const exam=String(input.get('exam')??'').trim();
+ const settings={exam,scope:input.getAll('scope')};
+ if(!validRecord('settings',settings)){
+  formError(form,'请输入有效的考试日期，格式为 YYYY-MM-DD。');
+  return;
+ }
+ phaseOverride=undefined;
+ const saved=change('settings','plan',settings);
+ toast(saved?'考试设置已保存':'本次设置已生效，但浏览器无法保存。可导出学习记录备份。');
+}
+const commands={
+ 'settings-save':()=>saveSettings($('settings-form')),
+ "backup-export":exportBackup,
+ "backup-import":importBackup,
+ menu:()=>$('sidebar').classList.toggle('open'),
+ close,
+ phase:id=>{phaseOverride=Number(id);render();},
+ 'plan-tab':id=>{planMode=id;render();},
+ 'practice-group':id=>{practiceFilters.group=id;render();},
+ 'error-new':()=>errorForm(),
+ 'error-from':id=>errorForm('',question(id)),
+ 'error-open':id=>errorDialog({...data.errors[id],id},false),
+ 'error-edit':id=>errorForm(id),
+ redo:id=>errorDialog({...data.errors[id],id},true),
+ 'proof-new':()=>proofForm(),
+ 'proof-from':id=>proofForm('',question(id)),
+ 'proof-open':id=>proofDialog({...data.proofs[id],id}),
+ 'proof-edit':id=>proofForm(id),
+ 'log-new':()=>logForm(),
+ 'log-edit':id=>logForm(id),
+ 'material-new':()=>materialForm(),
+ 'material-edit':id=>materialForm(id),
+ 'question-new':()=>questionForm(),
+ 'question-edit':id=>questionForm(id),
+ 'question-open':id=>questionDialog(question(id)),
+ 'question-done':id=>{change('attempts',id,{date:currentDay,solo:!data.attempts[id]?.solo});questionDialog(question(id));toast(data.attempts[id].solo?'已标记独立完成':'已撤销独立完成');},
+ 'bulk-new':bulk,
+ 'delete-ask':(id,group)=>show('删除'+groupLabel[group],'删除后，这条记录将从复习台移除。','<div class="form-actions"><button type="button" class="button outline" data-action="close">取消</button><button type="button" class="button danger" data-action="delete" data-group="'+group+'" data-id="'+attr(id)+'">确认删除</button></div>'),
+ delete:(id,group)=>{close();change(group,id,null);toast('已删除'+groupLabel[group]);}
+};
+document.addEventListener('click',event=>{
+ const trigger=event.target.closest('[data-action]');
+ if(trigger){event.preventDefault();commands[trigger.dataset.action]?.(trigger.dataset.id,trigger.dataset.group);return;}
+ if(event.target.closest('.side a'))$('sidebar').classList.remove('open');
+ else if(!event.target.closest('#sidebar')&&$('sidebar').classList.contains('open'))$('sidebar').classList.remove('open');
+});
+const filterIds={'p-source':'source','p-chapter':'chapter','p-type':'type','p-year':'year','p-attempt':'attempt'};
+document.addEventListener('change',event=>{
+ const target=event.target;
+ if(target.dataset.check){
+  change('checks',target.dataset.check,target.checked?true:null);
+  if(target.checked)toast('已完成，计划已更新');
+  $('check-'+target.dataset.check)?.focus({preventScroll:true});
+ }else if(Object.hasOwn(filterIds,target.id)){
+  practiceFilters[filterIds[target.id]]=target.value;updatePractice();
+ }else if(target.id==='e-status'){errorFilter=target.value;render();}
+ else if(target.id==='e-chapter'){errorChapter=target.value;render();}
+ else if(target.id==='log-mode'){logMode=target.value;render();}
+});
+document.addEventListener('input',event=>{if(event.target.id==='p-search'){practiceFilters.search=event.target.value;updatePractice();}});
+const unique=()=>crypto.randomUUID?.()??'r-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
+function keyForQuestion(x){
+ const key=[x.year,x.paper,x.number].map(s=>s.normalize('NFKC').trim().toLowerCase()).join('|');
+ const hit=values(data.questions).find(q=>[q.year,q.paper,q.number].map(s=>s.normalize('NFKC').trim().toLowerCase()).join('|')===key);
+ return {key,hit};
+}
+document.addEventListener('submit',event=>{
+ const f=event.target;
+ if(!['record-form','settings-form','redo-form','bulk-form'].includes(f.id))return;
+ event.preventDefault();
+ if(f.id==='settings-form'){saveSettings(f);return;}
+ const input=new FormData(f);
+ const raw=Object.fromEntries([...input].map(([k,v])=>[k,String(v).trim()]));
+ if(f.id==='redo-form'){
+  const id=f.dataset.id;
+  const next=raw.status==='solo'&&raw.next===addDays(currentDay,1)?addDays(currentDay,7):raw.next;
+  change('errors',id,{...data.errors[id],status:raw.status,next});
+  close();toast('已更新重做结果和复习计划');return;
+ }
+ if(f.id==='bulk-form'){
+  let list;
+  try{list=JSON.parse(raw.bulk);}catch{formError(f,'无法读取 JSON，请检查标点和引号。');return;}
+  if(!Array.isArray(list)||!list.length||list.length>100){formError(f,'每次请输入 1 至 100 道题的数组。');return;}
+  const items=list.map(q=>{
+   const item=Object.fromEntries(['year','paper','number','chapter','type','topic','prompt','hint'].map(k=>[k,typeof q?.[k]==='string'?q[k].trim():'']));
+   return {...item,source:'exam'};
+  });
+  const invalid=items.findIndex(q=>!validRecord('questions',q));
+  if(invalid>=0){formError(f,'第 '+(invalid+1)+' 项缺少必填内容，或章节代码、题型无效。');return;}
+  const seen=new Set();
+  let added=0;
+  for(const item of items){
+   const {key,hit}=keyForQuestion(item);
+   if(hit||seen.has(key))continue;
+   seen.add(key);change('questions',unique(),item);added++;
+  }
+  close();toast('已导入 '+added+' 道，跳过 '+(items.length-added)+' 道重复题');return;
+ }
+ const group=f.dataset.group,id=f.dataset.id||unique();
+ const value={...raw};
+ if(group==='materials')value.resolved=input.has('resolved');
+ if(group==='questions'){
+  value.source='exam';
+  const old=data.questions[id], same=old&&['year','paper','number'].every(k=>value[k]===old[k]);
+  if(!same&&keyForQuestion(value).hit){formError(f,'已有同年份、卷名与题号的真题。请从题库编辑原题。');return;}
+ }
+ if(!validRecord(group,value)){formError(f,'请检查必填内容、日期和数值，再保存。');return;}
+ close();change(group,id,value);toast('已保存'+groupLabel[group]);
+});
+window.addEventListener('hashchange',()=>{
+ phaseOverride=undefined;render();window.scrollTo(0,0);$('main').focus({preventScroll:true});
+});
+window.addEventListener('online',sync);
+window.addEventListener('focus',()=>{
+ const today=dayKey();
+ if(today!==currentDay){currentDay=today;render(true);}
+ sync();
+});
+setInterval(()=>{const today=dayKey();if(today!==currentDay){currentDay=today;render(true);}},30000);
+render();
+sync();
+
+</script>
+</body>
+</html>
